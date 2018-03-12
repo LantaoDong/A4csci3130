@@ -34,11 +34,13 @@ public class MainActivity extends Activity {
 
         //Set up the List View
        firebaseAdapter = new FirebaseListAdapter<Contact>(this, Contact.class,
-                android.R.layout.simple_list_item_1, appData.firebaseReference) {
+                android.R.layout.two_line_list_item, appData.firebaseReference) {
             @Override
             protected void populateView(View v, Contact model, int position) {
-                TextView contactName = (TextView)v.findViewById(android.R.id.text1);
-                contactName.setText(model.name);
+                TextView businessNumber = (TextView)v.findViewById(android.R.id.text1);
+                businessNumber.setText("Business Number: "+model.businessNumber);
+                TextView name = (TextView)v.findViewById(android.R.id.text2);
+                name.setText("Name: "+model.name);
             }
         };
         contactListView.setAdapter(firebaseAdapter);
@@ -63,6 +65,12 @@ public class MainActivity extends Activity {
         Intent intent = new Intent(this, DetailViewActivity.class);
         intent.putExtra("Contact", person);
         startActivity(intent);
+    }
+    public FirebaseListAdapter<Contact> getAdapter(){
+        return firebaseAdapter;
+    }
+    public ListView getListView(){
+        return  contactListView;
     }
 
 
