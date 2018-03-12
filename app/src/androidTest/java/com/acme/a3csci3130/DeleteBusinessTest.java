@@ -23,6 +23,8 @@ import static org.hamcrest.Matchers.anything;
  */
 
 public class DeleteBusinessTest {
+
+    //test if delete button works fine
     @Rule
     public ActivityTestRule<MainActivity> activityRule = new ActivityTestRule<>(MainActivity.class);
     @Test

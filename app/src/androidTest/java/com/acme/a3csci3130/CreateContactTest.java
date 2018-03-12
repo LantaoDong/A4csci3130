@@ -27,6 +27,8 @@ import static org.junit.Assert.*;
 public class CreateContactTest {
     @Rule
     public ActivityTestRule<MainActivity> activityRule = new ActivityTestRule<MainActivity>(MainActivity.class);
+
+    //test if createContact page words fine
     @Test
     public void createContactTest() throws Exception{
         onView(withId(R.id.submitButton)).perform(click());

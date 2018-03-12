@@ -27,6 +27,7 @@ import static org.hamcrest.Matchers.anything;
  */
 
 public class UpdateBusinessTest {
+    //test if update button works fine
     @Rule
     public ActivityTestRule<MainActivity> mActivityRule = new ActivityTestRule<>(MainActivity.class);
     @Test
